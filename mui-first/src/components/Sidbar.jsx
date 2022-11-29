@@ -15,7 +15,7 @@ import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-const Sidbar = () => {
+const Sidbar = ({ setMode, mode }) => {
   const sidebarProperties = [
     {
       icon: <HomeIcon />,
@@ -117,7 +117,9 @@ const Sidbar = () => {
             );
           })}
           <ListItem>
-            <MaterialUISwitch />
+            <Switch
+              onChange={(e) => setMode(mode === "light" ? "dark" : "light")}
+            />
           </ListItem>
 
           {/* <ListItem>
