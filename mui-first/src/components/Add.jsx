@@ -1,5 +1,7 @@
 import {
   Avatar,
+  Button,
+  ButtonGroup,
   Fab,
   Modal,
   Stack,
@@ -13,7 +15,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
-
+import ImageIcon from "@mui/icons-material/Image";
+import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import EventNoteIcon from "@mui/icons-material/EventNote";
 const StyleModal = styled(Modal)({
   display: "flex",
   alignItems: "center",
@@ -49,7 +54,15 @@ export const Add = () => {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box width={400} height={280} bgcolor="white" borderRadius={5} p={3}>
+        <Box
+          width={400}
+          height={280}
+          // bgcolor="white"
+          borderRadius={5}
+          p={3}
+          bgcolor={"background.default"}
+          color={"text.default"}
+        >
           <Typography variant="h6" color="gray">
             Create Post
           </Typography>
@@ -68,11 +81,23 @@ export const Add = () => {
             variant="standard"
           />
           <Stack direction="row" gap={1} mt={2} mb={3}>
-            <EmojiEmotionsIcon />
-            <EmojiEmotionsIcon />
-            <EmojiEmotionsIcon />
-            <EmojiEmotionsIcon />
+            <EmojiEmotionsIcon color="primary" />
+            <ImageIcon color="secondary" />
+
+            <VideoCameraBackIcon color="primary" />
+            <PersonAddIcon color="error" />
           </Stack>
+          <ButtonGroup
+            fuZ
+            disableElevation
+            variant="contained"
+            aria-label="Disabled elevation buttons"
+          >
+            <Button>Post</Button>
+            <Button sx={{ width: "100px" }}>
+              <EventNoteIcon backgroundColor="blue" />
+            </Button>
+          </ButtonGroup>
         </Box>
       </StyleModal>
     </div>
