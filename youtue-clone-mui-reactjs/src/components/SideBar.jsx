@@ -3,8 +3,7 @@ import { categories } from "../utils/constants";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 
-const selectedCategory = "New";
-const Sidebar = () => {
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <Stack
       direction="row"
@@ -21,12 +20,14 @@ const Sidebar = () => {
       {categories.map((categories) => (
         <Avatar sx={{ display: "flex", marginBottom: "3px", padding: "2px" }}>
           <Button
+            className="category-btn"
+            onClick={() => setSelectedCategory(categories.name)}
             sx={{
               bgcolor: "black",
               background: categories.name === selectedCategory && "#FCFCFC",
               color: "white",
             }}
-            className="category-btn"
+            key={categories.name.toString()}
           >
             <span>{categories.icon}</span>
           </Button>
