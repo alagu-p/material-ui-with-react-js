@@ -19,6 +19,7 @@ const ChannelCard = ({ channelDetail }) => (
       },
       height: "326px",
       margin: "auto",
+      marginTop: "-150px",
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
@@ -57,7 +58,7 @@ const ChannelCard = ({ channelDetail }) => (
         {channelDetail?.statistics?.subscriberCount && (
           <Typography>
             {parseInt(
-              channelDetail.statistics?.subscriberCount.toLocalString()
+              channelDetail.statistics?.subscriberCount.toLocaleString()
             )}
             Subscribers
           </Typography>
