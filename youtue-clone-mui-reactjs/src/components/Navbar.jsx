@@ -27,7 +27,7 @@ const Navbar = () => (
     >
       <img src={logos} alt="logo" height={45} />
     </Link>
-    <SearchBar className="hello" />
+    <SearchBar />
   </Stack>
 );
 

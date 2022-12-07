@@ -6,10 +6,23 @@ import SearchIcon from "../assets/svg/search-status.svg";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "../../src/index.css";
 const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+      setSearchTerm("");
+    }
+  };
+
   return (
     <Paper
       component="form"
-      onSubmit={() => {}}
+      onSubmit={handleSubmit}
       sx={{
         display: "flex",
         borderRadius: 20,
@@ -31,8 +44,8 @@ const SearchBar = () => {
         <input
           className="search-bar"
           placeholder="Search....."
-          value=""
-          onChange={() => {}}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </Paper>
     </Paper>
